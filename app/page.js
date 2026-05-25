@@ -1,6 +1,8 @@
-"use client";import { useState, useEffect, useRef } from "react";
+"use client";
+import { useState, useEffect, useRef } from "react";
 
-
+"use client";
+import { useState, useEffect, useRef } from "react";
 
 const T = {
   bg:         "#F7F6F2",
@@ -123,11 +125,16 @@ const globalCSS = `
 `;
 
 function injectGlobal() {
-  if (document.getElementById("bimfluence-global")) return;
-  const s = document.createElement("style");
-  s.id = "bimfluence-global";
+  if (typeof document === 'undefined') return;
+  if (document.getElementById('bimfluence-global')) return;
+  const s = document.createElement('style');
+  s.id = 'bimfluence-global';
   s.textContent = globalCSS;
   document.head.appendChild(s);
+  const fontLink = document.createElement('link');
+  fontLink.rel = 'stylesheet';
+  fontLink.href = 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap';
+  document.head.appendChild(fontLink);
 }
 injectGlobal();
 
@@ -665,7 +672,7 @@ function PageShell({ title, subtitle, children }) {
 }
 
 // APP
-export default function Page() {
+export default function App() {
   const [page, setPage]     = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const ref = useRef(null);
