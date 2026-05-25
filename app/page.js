@@ -1,9 +1,6 @@
 "use client";import { useState, useEffect, useRef } from "react";
 
-const fontLink = document.createElement("link");
-fontLink.rel = "stylesheet";
-fontLink.href = "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap";
-document.head.appendChild(fontLink);
+
 
 const T = {
   bg:         "#F7F6F2",
