@@ -1,9 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 
-"use client";
-import { useState, useEffect, useRef } from "react";
-
 const T = {
   bg:         "#F7F6F2",
   bgCard:     "#FFFFFF",
