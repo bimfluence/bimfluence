@@ -637,7 +637,7 @@ function Connect() {
                   onChange={e => setForm({ ...form, message: e.target.value })} style={{ resize: "vertical" }} />
               </div>
               <button className="cta-primary" style={{ width: "100%", justifyContent: "center" }}
-                onClick={() => form.name && form.email && setSent(true)}>
+                onClick={async () => { if (!form.name || !form.email) return; await fetch("https://formspree.io/f/xbdbzevz", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: form.name, email: form.email, message: form.message }) }); setSent(true); }}>
                 Send
               </button>
             </div>
